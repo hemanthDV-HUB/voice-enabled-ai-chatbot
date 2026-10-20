@@ -1,0 +1,274 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi",
+        "Hello",
+        "Hey",
+        "Good morning",
+        "Good afternoon",
+        "Good evening",
+        "Greetings",
+        "Hey there",
+        "Hi bot",
+        "Hello assistant",
+        "How are you",
+        "Howdy",
+        "What's up",
+        "Nice to meet you"
+      ],
+      "responses": [
+        "Hello! I am your AI Voice Assistant. How can I assist you today?",
+        "Greetings! I am listening. What would you like to talk about?",
+        "Hi there! Speak or type your query, and I'll be glad to help.",
+        "Hello! Voice recognition is active. How may I help you?"
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": [
+        "Bye",
+        "Goodbye",
+        "See you later",
+        "Catch you later",
+        "Talk to you soon",
+        "Have a good day",
+        "Exit",
+        "Quit",
+        "I am leaving",
+        "Take care"
+      ],
+      "responses": [
+        "Goodbye! Have a productive and wonderful day ahead!",
+        "Farewell! Feel free to talk to me whenever you need assistance.",
+        "Take care! It was a pleasure interacting with you.",
+        "See you later! Voice session ended successfully."
+      ]
+    },
+    {
+      "tag": "thanks",
+      "patterns": [
+        "Thank you",
+        "Thanks",
+        "Thanks a lot",
+        "Thank you so much",
+        "I appreciate your help",
+        "Much obliged",
+        "That was very helpful",
+        "Thanks for the answer"
+      ],
+      "responses": [
+        "You're very welcome! I'm glad I could assist.",
+        "Anytime! Helping you is what I was designed for.",
+        "My pleasure! Let me know if you have any other questions.",
+        "Happy to help! Do you have any more voice queries?"
+      ]
+    },
+    {
+      "tag": "about_bot",
+      "patterns": [
+        "Who are you",
+        "What is your name",
+        "What are you",
+        "Tell me about yourself",
+        "Who created you",
+        "What is your identity",
+        "Introduce yourself",
+        "Describe yourself"
+      ],
+      "responses": [
+        "I am an intelligent Voice-Enabled Chatbot built using Speech Recognition and a Deep Learning Neural Network for intent classification.",
+        "I am a Speech & Language Processing (SLP) AI agent capable of transcribing speech and understanding intents via deep neural architectures.",
+        "I am an AI Voice Assistant developed for the Speech and Language Processing Lab Assessment. I combine speech-to-text with deep neural intent analysis."
+      ]
+    },
+    {
+      "tag": "speech_recognition_info",
+      "patterns": [
+        "How does speech recognition work",
+        "Explain speech recognition",
+        "How do you convert voice to text",
+        "What speech recognition technique is used",
+        "Tell me about speech to text",
+        "How do you hear my voice",
+        "What is STT",
+        "Explain voice input"
+      ],
+      "responses": [
+        "Speech Recognition captures acoustic waveforms from your microphone, performs Fourier Transforms to extract Mel-Frequency Cepstral Coefficients (MFCCs) or spectrograms, and decodes phonemes into text tokens using acoustic and language models.",
+        "Voice input is processed either via the Web Speech API (real-time streaming acoustic model) or PyAudio/Google Speech Recognition, converting audio signals into normalized text strings for deep learning classification.",
+        "The system digitizes speech at 16kHz/44.1kHz, applies noise cancellation, tokenizes phonemes, and decodes the transcription for natural language intent analysis."
+      ]
+    },
+    {
+      "tag": "deep_learning_info",
+      "patterns": [
+        "What deep learning model do you use",
+        "Explain your neural network architecture",
+        "How is deep learning used here",
+        "Tell me about the deep learning model",
+        "What is your model architecture",
+        "How are you trained",
+        "What neural network is used",
+        "Explain your classification model"
+      ],
+      "responses": [
+        "My core engine is a Deep Multilayer Perceptron (DNN) with 3 dense hidden layers, Batch Normalization, ReLU activations, Dropout regularizers (0.3-0.4), and a Softmax output layer trained with Cross-Entropy Loss on intent embeddings.",
+        "I utilize a Deep Learning classifier that takes Bag-of-Words and lemmatized token vectors, passes them through fully connected linear layers with non-linear activations, and outputs class probability distributions across distinct intents.",
+        "The neural architecture features an input vocabulary projection layer (size |V|), hidden layers of dimension 128, 64, and 32 with dropout for regularization, optimized using Adam optimizer."
+      ]
+    },
+    {
+      "tag": "capabilities",
+      "patterns": [
+        "What can you do",
+        "What are your features",
+        "How can you help me",
+        "List your capabilities",
+        "Show commands",
+        "What can I ask you",
+        "What are your skills"
+      ],
+      "responses": [
+        "I can: 1) Listen and transcribe your spoken voice in real-time, 2) Classify intents using Deep Learning, 3) Display transcription and neural confidence scores, and 4) Provide spoken responses via Text-to-Speech synthesis!",
+        "You can ask me about Speech Recognition, Deep Learning, Natural Language Processing, weather, time, college assessment details, or general queries via voice or text.",
+        "My capabilities include Voice-to-Text transcription, Deep Neural Intent Classification, interactive multi-turn dialogue, confidence metric evaluation, and Speech Synthesis."
+      ]
+    },
+    {
+      "tag": "weather_query",
+      "patterns": [
+        "What is the weather today",
+        "How is the weather outside",
+        "Is it raining",
+        "Is it hot or cold today",
+        "Tell me the weather forecast",
+        "What is the temperature",
+        "Weather update please"
+      ],
+      "responses": [
+        "Currently, conditions are clear and pleasant with moderate temperatures. Make sure to stay hydrated!",
+        "The weather forecast indicates pleasant conditions with gentle breezes and normal atmospheric pressure.",
+        "Skies are mostly clear today! It is a great day to work on Speech & Language Processing projects."
+      ]
+    },
+    {
+      "tag": "time_query",
+      "patterns": [
+        "What time is it",
+        "Tell me the current time",
+        "What is the time right now",
+        "What date is today",
+        "Tell me the date",
+        "Can you check the time"
+      ],
+      "responses": [
+        "The current system clock is running in real-time. You can see the live timestamp displayed right next to our chat history!",
+        "Time is precious! Keep learning and exploring Deep Learning architectures.",
+        "The local system time is synchronized. Feel free to continue interacting with the voice chatbot."
+      ]
+    },
+    {
+      "tag": "slp_concept",
+      "patterns": [
+        "What is SLP",
+        "What is speech and language processing",
+        "Explain natural language processing",
+        "What is NLP",
+        "Tell me about phonetics and phonology",
+        "What are acoustic models",
+        "What is intent classification"
+      ],
+      "responses": [
+        "Speech and Language Processing (SLP) bridges acoustic speech science and computational linguistics, enabling machines to transcribe spoken phonemes and semantically comprehend human language.",
+        "Intent classification is a fundamental NLP task where an input utterance is mapped to a discrete semantic category representing the speaker's goal or intention.",
+        "SLP encompasses signal processing (Fourier analysis, spectrograms, MFCCs), statistical acoustic modeling (HMMs, CTC, Conformer, Whisper), and language representation (Word2Vec, DNNs, Transformers)."
+      ]
+    },
+    {
+      "tag": "lab_assessment",
+      "patterns": [
+        "Tell me about this lab assessment",
+        "What is this project for",
+        "What is the 20 mark question",
+        "Explain this assignment",
+        "Who evaluated this chatbot",
+        "What are the assessment requirements"
+      ],
+      "responses": [
+        "This project satisfies the 20-mark SLP Lab Assessment: Develop, implement, and deploy an online Voice-Enabled Chatbot using Speech Recognition and Deep Learning, with public hosting and full metrics reporting.",
+        "The assessment requires: 1) Speech Recognition integration, 2) Deep Learning intent classification model, 3) Displaying recognized speech and chatbot response, 4) Online public deployment, and 5) Comprehensive technical report.",
+        "This submission features live speech recognition, a PyTorch Deep Neural Network, dual display of transcription & intent response, and a publicly accessible deployment link."
+      ]
+    },
+    {
+      "tag": "sentiment_praise",
+      "patterns": [
+        "You are amazing",
+        "Great job",
+        "Awesome work",
+        "You are very smart",
+        "I love this chatbot",
+        "Impressive project",
+        "Well done",
+        "You work so well"
+      ],
+      "responses": [
+        "Thank you so much! High-quality speech recognition and deep learning make all the difference.",
+        "I appreciate your kind words! Striving for 100% accuracy and seamless interaction.",
+        "Thank you! It is thrilling to showcase the power of deep learning in voice technologies."
+      ]
+    },
+    {
+      "tag": "sentiment_frustrated",
+      "patterns": [
+        "You didn't understand me",
+        "That is wrong",
+        "You are not helpful",
+        "I am confused",
+        "I need human help",
+        "Stop talking",
+        "This is frustrating"
+      ],
+      "responses": [
+        "I apologize for the misunderstanding. Please try rephrasing your sentence or speaking more clearly into your microphone.",
+        "Sorry about that! Ambient noise can sometimes impact speech recognition. You can also type your message directly.",
+        "My apologies! I am continuously learning. Please try asking about speech recognition, deep learning, or general assistance."
+      ]
+    },
+    {
+      "tag": "joke",
+      "patterns": [
+        "Tell me a joke",
+        "Tell me a funny joke",
+        "Make me laugh",
+        "Say something funny",
+        "Do you know any jokes",
+        "Can you tell jokes",
+        "Tell another joke",
+        "Crack a joke",
+        "Give me a joke"
+      ],
+      "responses": [
+        "Why do neural networks love coffee? Because it helps them stay awake during backpropagation!",
+        "Why was the NLP model always calm? Because it knew how to handle token tension!",
+        "How do speech recognition models greet each other? 'I hear you loud and clear!'"
+      ]
+    },
+    {
+      "tag": "fallback",
+      "patterns": [
+        "xyzabc",
+        "random gibberish",
+        "blablabla",
+        "quantum entanglement of bananas"
+      ],
+      "responses": [
+        "I recognized your speech, but the intent is outside my current trained knowledge base. Could you please rephrase or ask about Speech Recognition, Deep Learning, or general assistance?",
+        "My Deep Learning classifier has low confidence for that phrase. Please try asking about my features, the SLP lab project, or speech processing!",
+        "Pardon me, I didn't quite catch your meaning. Please speak clearly or try one of the suggested topics."
+      ]
+    }
+  ]
+}

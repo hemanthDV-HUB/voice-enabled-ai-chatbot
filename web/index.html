@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice-Enabled AI Chatbot | Speech Recognition & Deep Learning</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Top Navigation / Header -->
+        <header class="app-header">
+            <div class="header-left">
+                <div class="logo-icon">
+                    <i class="fa-solid fa-microphone-lines"></i>
+                </div>
+                <div>
+                    <h1>Voice-Enabled Chatbot</h1>
+                    <p class="subtitle">Speech Recognition + Deep Neural Network Intent Classification</p>
+                </div>
+            </div>
+            <div class="header-badges">
+                <span class="badge badge-accent"><i class="fa-solid fa-user-graduate"></i> HEMANTH REDDY (23BAI0119)</span>
+                <span class="badge badge-tech"><i class="fa-solid fa-award"></i> SLP Lab Assessment (20M)</span>
+                <span class="badge badge-tech"><i class="fa-solid fa-brain"></i> PyTorch Deep Learning</span>
+                <span class="badge badge-live"><span class="pulse-dot"></span> Online Live System</span>
+            </div>
+        </header>
+
+        <!-- Main Content Grid -->
+        <main class="main-grid">
+            <!-- Left Column: Voice Controller & Input -->
+            <section class="card input-section">
+                <div class="card-header">
+                    <h2><i class="fa-solid fa-headset"></i> Voice Input Controller</h2>
+                    <div class="tts-toggle-wrapper">
+                        <label for="ttsToggle" class="switch-label">
+                            <i class="fa-solid fa-volume-high"></i> Voice Reply (TTS):
+                        </label>
+                        <input type="checkbox" id="ttsToggle" checked>
+                    </div>
+                </div>
+
+                <!-- Voice Recording Central Hub -->
+                <div class="mic-hub">
+                    <button id="micBtn" class="mic-button" title="Click to speak">
+                        <div class="mic-ripple"></div>
+                        <i class="fa-solid fa-microphone" id="micIcon"></i>
+                    </button>
+                    <div class="mic-status-container">
+                        <div id="statusBadge" class="status-badge ready">
+                            <i class="fa-solid fa-circle-check"></i> Ready to Listen
+                        </div>
+                        <p id="micInstructions" class="mic-instructions">Click the microphone button and speak your query</p>
+                    </div>
+
+                    <!-- Live Audio Waveform Animation -->
+                    <div id="audioWave" class="waveform-container inactive">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
+                </div>
+
+                <!-- Fallback / Hybrid Text Input -->
+                <div class="text-input-group">
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-keyboard input-icon"></i>
+                        <input type="text" id="textInput" placeholder="Or type your query here and press Enter..." autocomplete="off">
+                        <button id="sendBtn" class="btn-send" title="Send query">
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Quick Voice Prompts -->
+                <div class="suggested-prompts">
+                    <span class="prompt-label"><i class="fa-solid fa-lightbulb"></i> Suggested Voice Queries:</span>
+                    <div class="prompt-chips">
+                        <button class="chip" data-query="How does speech recognition work?">🎙️ How does speech recognition work?</button>
+                        <button class="chip" data-query="Explain your deep learning model architecture">🧠 Explain your DL model</button>
+                        <button class="chip" data-query="What can you do?">⚡ What can you do?</button>
+                        <button class="chip" data-query="Tell me about this lab assessment">🎓 Lab assessment details</button>
+                        <button class="chip" data-query="Tell me a funny joke">😄 Tell me a joke</button>
+                        <button class="chip" data-query="What is the weather today?">⛅ Weather query</button>
+                    </div>
+                </div>
+
+                <!-- Lab Architecture Specs Mini-Card -->
+                <div class="specs-box">
+                    <div class="spec-item">
+                        <span class="spec-title">Speech Engine:</span>
+                        <span class="spec-value">Web Speech Recognition API / Spectrogram Analysis</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-title">Deep Learning Architecture:</span>
+                        <span class="spec-value">3-Layer DNN (Linear-BN-ReLU-Dropout-Softmax)</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-title">Trained Intent Classes:</span>
+                        <span class="spec-value">15 Conversational & Technical Domains</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Right Column: Dual Display & Conversation History -->
+            <section class="card results-section">
+                <div class="card-header">
+                    <h2><i class="fa-solid fa-comments"></i> Speech & Deep Learning Response</h2>
+                    <button id="clearChatBtn" class="btn-secondary-sm" title="Clear chat history">
+                        <i class="fa-solid fa-rotate-left"></i> Reset
+                    </button>
+                </div>
+
+                <!-- Prominent Dual Display Required by Assessment -->
+                <div class="dual-display-container">
+                    <!-- 1. Recognized Speech Display -->
+                    <div class="display-box speech-display">
+                        <div class="box-badge speech-tag">
+                            <i class="fa-solid fa-microphone-lines"></i> 1. RECOGNIZED SPEECH (Speech-to-Text)
+                        </div>
+                        <div class="box-body">
+                            <p id="speechOutputText" class="output-text placeholder">Awaiting your voice input... (Speak into the microphone)</p>
+                        </div>
+                        <div class="box-footer">
+                            <span class="footer-tag"><i class="fa-solid fa-clock"></i> <span id="speechLatency">0 ms</span></span>
+                            <button id="copySpeechBtn" class="btn-icon" title="Copy recognized text"><i class="fa-regular fa-copy"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- 2. Chatbot Response Display -->
+                    <div class="display-box response-display">
+                        <div class="box-badge response-tag">
+                            <i class="fa-solid fa-robot"></i> 2. CHATBOT RESPONSE (Deep Learning Model)
+                        </div>
+                        <div class="box-body">
+                            <p id="responseOutputText" class="output-text placeholder">The chatbot's generated answer will appear here...</p>
+                        </div>
+                        <div class="box-footer">
+                            <div class="metrics-row">
+                                <span class="metric-badge intent-badge">
+                                    <i class="fa-solid fa-tag"></i> Intent: <strong id="detectedIntent">None</strong>
+                                </span>
+                                <span class="metric-badge conf-badge">
+                                    <i class="fa-solid fa-chart-line"></i> DL Confidence: <strong id="confidenceScore">0.0%</strong>
+                                </span>
+                            </div>
+                            <button id="speakResponseBtn" class="btn-icon" title="Speak response aloud"><i class="fa-solid fa-volume-high"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Full Conversation History Timeline -->
+                <div class="conversation-wrapper">
+                    <h3><i class="fa-solid fa-timeline"></i> Multi-Turn Dialogue Transcript</h3>
+                    <div id="chatHistory" class="chat-history">
+                        <div class="message assistant-message">
+                            <div class="msg-avatar"><i class="fa-solid fa-robot"></i></div>
+                            <div class="msg-bubble">
+                                <p>Hello! I am your Voice-Enabled AI Assistant. Click the microphone button and ask me anything about Speech Recognition, Deep Learning, or general inquiries!</p>
+                                <span class="msg-time">System Ready</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Technical Report & Methodology Accordion / Section -->
+        <section class="card technical-report-card">
+            <details class="report-details" open>
+                <summary class="report-summary">
+                    <span><i class="fa-solid fa-book-open"></i> Technical Assessment Documentation (Methodology, Architecture & Results)</span>
+                    <i class="fa-solid fa-chevron-down chevron-icon"></i>
+                </summary>
+                <div class="report-body">
+                    <div class="report-grid">
+                        <div class="report-col">
+                            <h4><i class="fa-solid fa-database"></i> 1. Dataset & Preprocessing</h4>
+                            <p>Trained on <strong>117 multi-domain intent patterns</strong> spanning 15 distinct categories (Speech Recognition, Deep Learning architectures, SLP concepts, weather, time, greetings, and out-of-scope fallback). Text preprocessing utilizes lowercasing, punctuation stripping, stemming/lemmatization, and Bag-of-Words feature representations across a 175-dimensional vocabulary (|V| = 175).</p>
+                        </div>
+                        <div class="report-col">
+                            <h4><i class="fa-solid fa-network-wired"></i> 2. Deep Learning Architecture</h4>
+                            <p>A Deep Neural Network built and trained in <strong>PyTorch</strong>:
+                               <br>• Input Dimension: 175 (|V|)
+                               <br>• Hidden Layer 1: Dense(128) + BatchNorm1d + ReLU + Dropout(0.35)
+                               <br>• Hidden Layer 2: Dense(64) + BatchNorm1d + ReLU + Dropout(0.30)
+                               <br>• Hidden Layer 3: Dense(32) + ReLU + Dropout(0.20)
+                               <br>• Output Layer: Dense(15) + Softmax probability distribution.
+                            </p>
+                        </div>
+                        <div class="report-col">
+                            <h4><i class="fa-solid fa-square-poll-vertical"></i> 3. Evaluation & Results</h4>
+                            <p>Optimized using <strong>Adam Optimizer</strong> (lr=0.003, weight decay=1e-4) and <strong>CrossEntropyLoss</strong> for 260 epochs.
+                               <br>• <strong>Dataset Overall Accuracy: 92.31%</strong>
+                               <br>• Macro Average Precision: 0.95 | Recall: 0.91 | F1-Score: 0.92
+                               <br>• Zero-latency client-side neural forward pass matched to PyTorch within 1.18e-07.
+                            </p>
+                        </div>
+                        <div class="report-col">
+                            <h4><i class="fa-solid fa-wave-square"></i> 4. Speech Recognition (STT/TTS)</h4>
+                            <p>Combines <strong>Web Speech API</strong> (acoustic modeling + language decoding) and server-side <strong>Google Speech Recognition</strong> for voice capture. Response audio synthesized via <strong>SpeechSynthesis API</strong> for complete voice-in, voice-out interaction.</p>
+                        </div>
+                    </div>
+                </div>
+            </details>
+        </section>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <p>Speech & Language Processing (SLP) Lab Assessment (20 Marks) | Submitted by <strong>HEMANTH REDDY</strong> (Reg No: <strong>23BAI0119</strong>)</p>
+        </footer>
+    </div>
+
+    <!-- Scripts: Weights Data -> Inference Engine -> Application Logic -->
+    <script src="model_data.js"></script>
+    <script src="nn_engine.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

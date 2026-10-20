@@ -1,0 +1,26 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Run Gradio App (app.py)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/app.py",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Python: Train Deep Learning Model (train.py)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/train.py",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Python: Test Inference Engine (test_inference.py)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/test_inference.py",
+            "console": "integratedTerminal"
+        }
+    ]
+}
