@@ -1,5 +1,7 @@
 torch
-gradio
+streamlit
+gTTS
 SpeechRecognition
 numpy
 scikit-learn
+gradio

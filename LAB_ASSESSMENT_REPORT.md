@@ -213,14 +213,19 @@ Inference was tested with sample spoken utterances:
 ## 5. Deployment & Live Link Information
 
 ### 5.1 Deployment Architecture
-Microphone voice input in modern web browsers requires a secure **HTTPS** origin. To ensure uninterrupted evaluation, the application provides two hosting avenues:
+Microphone voice input in modern web browsers requires a secure **HTTPS** origin. To ensure uninterrupted evaluation, the application provides multiple hosting avenues:
 
-1. **Hugging Face Spaces (Gradio Python Application):**
+1. **Streamlit Community Cloud (`.streamlit.app`):**
+   - Direct integration via `streamlit_app.py` hosted on Streamlit Cloud.
+   - Access URL Format: `https://<your-app-name>.streamlit.app/`
+   - Zero-configuration cloud hosting directly synchronized with your GitHub repository.
+
+2. **Hugging Face Spaces (Gradio Python Application):**
    - Fully managed containerized environment running `app.py`.
    - Access URL Format: `https://huggingface.co/spaces/<username>/voice-chatbot-slp`
    - Automated deployment script provided: `python deploy_hf.py --token <HF_TOKEN> --repo <username/space-name>`
 
-2. **GitHub Pages / Vercel (Client-Side Deep Learning Web App):**
+3. **GitHub Pages / Vercel (Client-Side Deep Learning Web App):**
    - Zero-latency standalone deployment located in `/web` directory (`index.html`, `style.css`, `model_data.js`, `nn_engine.js`, `app.js`).
    - Automatically served over HTTPS with free SSL certificates.
    - Access URL Format: `https://<username>.github.io/SLP_PROJECT/web/`

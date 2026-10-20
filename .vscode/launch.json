@@ -2,6 +2,14 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Streamlit: Run Voice Chatbot (streamlit_app.py)",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "streamlit",
+            "args": ["run", "${workspaceFolder}/streamlit_app.py"],
+            "console": "integratedTerminal"
+        },
+        {
             "name": "Python: Run Gradio App (app.py)",
             "type": "debugpy",
             "request": "launch",
